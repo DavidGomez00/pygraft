@@ -47,12 +47,12 @@ def parse_result(full_graph, ttl_file, tsv_file, n_entities=15):
 
 
 if __name__ == "__main__":
-    with open("output/french_royalty/enriched/config.yml") as f:
+    with open("output/french_royalty/normalized/config.yml") as f:
         num_entities = yaml.safe_load(f)["num_entities"]
 
     parse_result(
-        full_graph="output/french_royalty/enriched/full_graph.rdf",
-        ttl_file=".data/french_royalty/enriched/french_royalty.ttl",
-        tsv_file=".data/french_royalty/enriched/french_royalty.tsv",
+        full_graph="output/french_royalty/normalized/full_graph.rdf",
+        ttl_file=".data/french_royalty/pygraft/french_royalty.ttl",
+        tsv_file=".data/french_royalty/pygraft/french_royalty.tsv",
         n_entities=num_entities + 1,
     )
